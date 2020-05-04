@@ -128,17 +128,20 @@ public class JobData {
     }
 
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
+        loadData();
+
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
 
-            for (Map.Entry<String, String> column : row.entrySet()) {
+            for (String key : row.keySet()) {
 
-                String a = column.getKey();
-                String b = column.getKey();
+                String a = row.get(key);
 
-                if (a.contains(value) || b.contains(value)) {
+
+                if (a.contains(value)) {
                     jobs.add(row);
+                    break;
                 }
 
             }

@@ -123,6 +123,7 @@ public class TechJobs {
                     System.out.println("*********");
 
                 }
+
             }
         }else {
             System.out.println("No Matching Results");
